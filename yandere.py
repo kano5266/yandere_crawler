@@ -127,6 +127,16 @@ def init(st_page=1, end_page=10, tag="shintarou", thread_num=5, min_score=5):
         st_page = 1
     if end_page > 1072:
         end_page = 1072
+    ######
+    init_page_url = HOST + "/post?page=1&tags=" + tag
+    with http:
+        response = http.get(init_page_url).text
+        soup = BeautifulSoup(response, "html.parser")
+        pagination = soup.find("div", class_="pagination")
+        last_page = int(pagination.find_all("a")[-2].attrs['aria-label'].replace('Page ', ''))
+    if last_page < end_page:
+        end_page = last_page    
+    ######
 
     for page in range(st_page, end_page+1):
         # 构造页面url链接
