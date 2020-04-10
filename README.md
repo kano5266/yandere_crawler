@@ -1,4 +1,4 @@
-# yandere_scraper
+# yandere_crawler
 yande.re爬虫改进版
 
 来源:https://zhuanlan.zhihu.com/p/80932642  
