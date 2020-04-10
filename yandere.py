@@ -111,13 +111,17 @@ def download(img_url, file_path, thread_id):
     :return:
     """
     try:
-        with http:
-            content = http.get(img_url).content
-        with open(file_path, "wb+") as f:
-            f.write(content)
-        print("线程ID:{}, 图片已保存至: {}".format(thread_id, file_path))
-    except:
-        pass
+        with open(file_path):
+            print('当前图片已存在，不保存')
+    except FileNotFoundError:
+        try:
+            with http:
+                content = http.get(img_url).content
+            with open(file_path, "wb+") as f:
+                f.write(content)
+            print("线程ID:{}, 图片已保存至: {}".format(thread_id, file_path))
+        except:
+            pass
 
 
 def init(st_page=1, end_page=10, tag="shintarou", thread_num=5, min_score=5):
