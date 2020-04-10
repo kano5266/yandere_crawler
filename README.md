@@ -1,7 +1,8 @@
 # yandere_scraper
-yande.re爬虫
+yande.re爬虫改进版
 
-来源:https://zhuanlan.zhihu.com/p/80932642
+来源:https://zhuanlan.zhihu.com/p/80932642  
+
 原作者:丁丁
 
 #### 改进点:
