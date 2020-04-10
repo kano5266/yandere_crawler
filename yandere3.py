@@ -12,13 +12,13 @@ import traceback
 import sys
 import urllib.parse
 
-args = sys.argv
+args = sys.argv #run [python yandere3.py 'tag']
 
 image_save_path_base=None
 # 目标网站
 HOST = "https://yande.re"
 # 当前目录设为根目录
-ROOT_PATH = os.path.abspath('/unraidvault/scraping')# os.path.dirname(__file__)
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__))# os.path.dirname(__file__)
 
 # 请求头
 headers = {
@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
     st_num = 1#int(input("请输入开始页数:[1-1071]:"))
     end_num = 150#int(input("请输入结束页数:[1-1072]:"))
-    thread_number =2# int(input("请输入要使用的线程数量:"))
+    thread_number =5# int(input("请输入要使用的线程数量:"))
     min_score = 2#int(input("设置图片评分低于n时过滤该图片, 输入一个整数:"))
     init(tag=tag,st_page=st_num, end_page=end_num, min_score=min_score, thread_num=thread_number)
     time.sleep(10)
